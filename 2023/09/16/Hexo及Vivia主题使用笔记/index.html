@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://aurora-n.github.io/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2023-09-16T06:39:32.000Z">
-<meta property="article:modified_time" content="2023-09-16T08:13:31.528Z">
+<meta property="article:modified_time" content="2023-09-16T10:02:55.619Z">
 <meta property="article:author" content="Aurorallz &#x2F; Aurora-N">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Vivia">
@@ -279,7 +279,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            745 词 
+            777 词 
           </div>
         </div>
         
@@ -315,13 +315,14 @@
 <p>若要添加其他网站，将其添加于<code>links</code>内，这里以添加Bilibili为例，可以前往<a target="_blank" rel="noopener" href="https://fontawesome.com/search">这里</a>查找图标，并将<code>icon</code>内的第二个<code>fa-</code>修改为你要添加的网站的图标。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">links:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-twitter</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://twitter.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Bilibili</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-bilibili</span></span><br><span class="line">    <span class="attr">url:</span> <span class="comment">#这里填写你的b站链接</span></span><br></pre></td></tr></table></figure>
 <h3 id="设置分类、标签（其他主题也适用）">设置分类、标签（其他主题也适用）</h3>
-<p>修改文章的<code>.md</code>文件开头</p>
+<p>修改文章的<code>.md</code>文件开头的Front-matter区域，即文件最上方以 — 分隔的区域。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <p>新增<code>categories: </code>、<code>tags:</code>，并在里面分别输入想要的分类和标签名称，如</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="attr">categories:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">test</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">参阅Hexo关于Front-matter的文档</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348131730">多标签写法</a></p>
 <h3 id="设置文章的预览图片">设置文章的预览图片</h3>
-<p>修改文章的<code>.md</code>文件开头，新增<code>photos: </code>，并输入封面图片的路径，具体如下：</p>
+<p>修改文章的<code>.md</code>文件开头的Front-matter区域，新增<code>photos: </code>，并输入封面图片的路径，具体如下：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="attr">categories:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">photos:</span> <span class="string">covers/example.png</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <p>注意，此处要填写的路径是相对于<code>/source/</code>的，若要以<code>/source/covers/example.png</code>作为封面图，<code>photos</code>应该填写为<code>covers/example.png</code>。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia/issues/8">参考</a></p>
