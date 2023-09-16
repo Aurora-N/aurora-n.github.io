@@ -14,19 +14,27 @@
   
 
   
-  <title>Aurorallz&#39;s small home</title>
+  <title>Hexo及Vivia主题使用笔记 | Aurorallz&#39;s small home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Aurorallz&#39;s small home">
-<meta property="og:url" content="https://aurora-n.github.io/index.html">
+  <meta name="description" content="Hexo使用笔记 施工中…… Vivia主题使用笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo及Vivia主题使用笔记">
+<meta property="og:url" content="https://aurora-n.github.io/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Aurorallz&#39;s small home">
+<meta property="og:description" content="Hexo使用笔记 施工中…… Vivia主题使用笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aurora-n.github.io/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/1.png">
+<meta property="article:published_time" content="2023-09-16T06:39:32.000Z">
+<meta property="article:modified_time" content="2023-09-16T07:56:02.497Z">
 <meta property="article:author" content="Aurorallz &#x2F; Aurora-N">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Vivia">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aurora-n.github.io/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/1.png">
   
   
     <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
@@ -47,14 +55,14 @@
   
   
     
-<div id="banner" class=" is_home ">
+<div id="banner" class="">
   <img src="/assets/banner.jpg" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
    
   <div id="main-grid" class="shadow   ">
-    <div id="nav" class=" is_home "  >
+    <div id="nav" class=""  >
       <navbar id="navbar">
   <nav id="title-nav">
     <a href="/">
@@ -237,10 +245,11 @@
 </sidebar>
     </div>
     <div id="content-body">
-      
-   
+       
 
 <article id="post-Hexo及Vivia主题使用笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
    
   <div class="article-inner">
     <div class="article-main">
@@ -250,8 +259,8 @@
   <div class="main-title-dot"></div>
   
     
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">Hexo及Vivia主题使用笔记</a>
+      <h1 class="p-name article-title" itemprop="headline name">
+        Hexo及Vivia主题使用笔记
       </h1>
     
   
@@ -282,6 +291,42 @@
           <h2 id="Hexo使用笔记">Hexo使用笔记</h2>
 <p><em>施工中……</em></p>
 <h2 id="Vivia主题使用笔记">Vivia主题使用笔记</h2>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://github.com/saicaca">saicaca</a>大神的<a target="_blank" rel="noopener" href="https://saicaca.github.io/vivia-preview/0">Vivia主题</a>深得我心，但由于<a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia/blob/main/README.zh-CN.md">文档</a>有些简略，故在此记录部分模块的使用方法。部分方法对其他Hexo主题同样适用。</p>
+<!--more-->
+<h3 id="切换主色调">切换主色调</h3>
+<p>打开博客目录的<code>_config.vivia.yml</code>主题配置文件，修改<code>hue</code>的数值即可。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Appearence</span></span><br><span class="line"><span class="attr">hue:</span> <span class="number">270</span>                   <span class="comment"># The hue of the theme color (e.g. red: 0, orange: 60, blue: 260, purple: 300, pink: 345)</span></span><br></pre></td></tr></table></figure>
+<p>vivia主题的<a target="_blank" rel="noopener" href="https://saicaca.github.io/vivia-preview/0">Demo</a>右下角有一个<code>Theme Preview</code>模块，你可以在其中选择喜欢的颜色，再将对应的数值替换<code>hue</code>中的值。</p>
+<h3 id="设置封面">设置封面</h3>
+<p>修改<code>_config.vivia.yml</code>主题配置文件中的<code>Banner</code>模块。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Banner</span></span><br><span class="line"><span class="attr">banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>            <span class="comment"># Display banner</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/assets/banner.png</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">center</span>         <span class="comment"># Specifies the alignment of the image, see the &quot;object-position&quot; property in CSS</span></span><br><span class="line">  <span class="attr">onAllPages:</span> <span class="literal">true</span>         <span class="comment"># Display banner on all pages</span></span><br></pre></td></tr></table></figure>
+<p>先将<code>enable</code>中的值改为<code>true</code>，再修改<code>url</code>中的路径，将其修改为你要设置的图片的路径。注意，此处的路径是相对于<code>/source</code>而言的，所以最好把封面图片放置于<code>source</code>文件夹内。</p>
+<h3 id="设置头像与社交网站链接">设置头像与社交网站链接</h3>
+<p>修改<code>_config.vivia.yml</code>主题配置文件中的<code>Personal info</code>模块</p>
+<h4 id="设置头像等基本信息">设置头像等基本信息</h4>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Personal info</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="comment"># 头像图片的路径,留空不显示头像</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Your</span> <span class="string">Name</span> <span class="comment">#你的名字</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">This</span> <span class="string">is</span> <span class="string">the</span> <span class="string">subtitle</span> <span class="comment">#名字下面的副标题</span></span><br></pre></td></tr></table></figure>
+<p>若要显示头像，就将头像图片的路径填写到<code>avatar</code>内。和封面一样，此处头像的路径也是相对于<code>\source</code>的。</p>
+<h4 id="设置社交网站链接">设置社交网站链接</h4>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Personal info</span></span><br><span class="line"><span class="attr">avatar:</span> </span><br><span class="line"><span class="attr">author:</span> <span class="string">Your</span> <span class="string">Name</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">This</span> <span class="string">is</span> <span class="string">the</span> <span class="string">subtitle</span></span><br><span class="line"><span class="attr">links:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-twitter</span>      <span class="comment"># Find icon codes at https://fontawesome.com/search</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://twitter.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Steam</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-steam</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://store.steampowered.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">GitHub</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-github</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com</span></span><br></pre></td></tr></table></figure>
+<p>将<code>url</code>内的网址替换为自己的社交网站链接即可。</p>
+<p>若不需要某个网站，将其删除或在其前面注释</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  - name: Steam</span></span><br><span class="line"><span class="comment">#    icon: fa-brands fa-steam</span></span><br><span class="line"><span class="comment">#    url: https://store.steampowered.com</span></span><br></pre></td></tr></table></figure>
+<p>若要添加其他网站，将其添加于<code>links</code>内，这里以添加Bilibili为例，可以前往<a target="_blank" rel="noopener" href="https://fontawesome.com/search">这里</a>查找图标，并将<code>icon</code>内的第二个<code>fa-</code>修改为你要添加的网站的图标。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">links:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-twitter</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://twitter.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Bilibili</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-bilibili</span></span><br><span class="line">    <span class="attr">url:</span> <span class="comment">#这里填写你的b站链接</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置分类、标签（其他主题也适用）">设置分类、标签（其他主题也适用）</h3>
+<p>修改文章的<code>.md</code>文件开头</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>新增<code>categories: </code>、<code>tags:</code>，并在里面分别输入想要的分类和标签名称，如</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="attr">categories:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">test</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/348131730">多标签写法</a></p>
+<h3 id="设置文章的预览图片">设置文章的预览图片</h3>
+<p>修改文章的<code>.md</code>文件开头，新增<code>photos: </code>，并输入封面图片的路径，具体如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-09-16 11:45:14</span> </span><br><span class="line"><span class="attr">categories:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">photos:</span> <span class="string">covers/example.png</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>注意，此处要填写的路径是相对于<code>/source/</code>的，若要以<code>/source/covers/example.png</code>作为封面图，<code>photos</code>应该填写为<code>covers/example.png</code>。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia/issues/8">参考</a></p>
+<p><img src="/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/1.png" alt="参考效果"></p>
+
         
       </div>
 
@@ -289,220 +334,37 @@
     </div>
     
      
-    <a class="right-panel  non-pic  "
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/16/functional-test/"
+      title="functional test"
+     >
+
+    <p class="title-text">
       
-      href="/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
+        functional test
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
   
 </article>
 
  
-
-   
-
-<article id="post-functional-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/09/16/functional-test/">functional test</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-16T02:24:09.000Z" itemprop="datePublished">2023-09-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            185 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/" rel="tag">test</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <p>小小的测试罢了😄</p>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  with-pic  "
-       style="background-image: url(/covers/functional-test/1.jpg)" 
-      href="/2023/09/16/functional-test/" 
-    >
-       
-      <div class="overlay">
-        <i class="fa-solid fa-angle-right with-pic"></i>
-      </div>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-作品展示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/">作品展示</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-08T13:32:48.000Z" itemprop="datePublished">2023-09-08</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/">小作品</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            57 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <p>一些较为满意的作品，希望你也喜欢！</p>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  with-pic  "
-       style="background-image: url(/covers/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/1.jpg)" 
-      href="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/" 
-    >
-       
-      <div class="overlay">
-        <i class="fa-solid fa-angle-right with-pic"></i>
-      </div>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-关于我" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/28/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-28T02:10:16.000Z" itemprop="datePublished">2023-08-28</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            192 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" rel="tag">自我介绍</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <h2 id="个人简介">个人简介</h2>
-<p><s>新生</s>作业罢了，<strong>求你别看</strong>😭</p>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/28/%E5%85%B3%E4%BA%8E%E6%88%91/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-
-
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
