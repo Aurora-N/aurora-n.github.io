@@ -200,10 +200,10 @@ body:after {
   position: relative;
 }
 .toc-article {
-  padding: 1em;
+  padding: 0em;
 }
 .toc-article .toc-title {
-  font-weight: bold;
+  font-weight: none;
 }
 #toc .toc {
   padding: 0;
