@@ -2301,11 +2301,12 @@ a.article-title:active {
 .article-entry .highlight {
   background: var(--article-block);
   border-radius: 8px;
+  font-size: 14px;
   padding: 15px 20px;
   margin: 16px auto;
   overflow: auto;
   color: #ccc;
-  line-height: 25.6px;
+  line-height: 22.400000000000002px;
 }
 .article-entry pre ::selection,
 .article-entry .highlight ::selection {
@@ -2322,6 +2323,7 @@ a.article-title:active {
 }
 .article-entry code {
   background: var(--article-code-bg);
+  font-size: 14px;
   border-radius: 4px;
   padding: 0 0.3em;
   -webkit-transition: background 0.15s ease-out;
