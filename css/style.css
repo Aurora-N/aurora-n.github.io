@@ -230,6 +230,84 @@ body:after {
 #toc .toc-child {
   padding-left: 1.5em;
 }
+.post-copyright-info-container {
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--background-color-2);
+  border-radius: calc(var(--box-border-radius) * 0.6);
+}
+.post-copyright-info-container .copyright-info-content {
+  width: 100%;
+  padding: 1.3rem;
+  overflow: hidden;
+  font-size: 1rem;
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-top {
+  width: 100%;
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-top .copyright-post-title {
+  width: 100%;
+  color: var(--text-color-3);
+  font-size: 1.1rem;
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-top .copyright-post-link {
+  width: 100%;
+  margin-top: 0.2rem;
+  color: var(--text-color-4);
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-bottom .bottom-item {
+  z-index: $z-index-10;
+  margin-right: 1.2rem;
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-bottom .bottom-item .type {
+  color: var(--text-color-4);
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-bottom .bottom-item .content {
+  margin-top: 0.2rem;
+  color: var(--text-color-3);
+}
+.post-copyright-info-container .copyright-info-content .copyright-info-bottom .post-license .content i {
+  font-size: 1.1rem;
+}
+.post-copyright-info-container .copyright-info-content .copyright-bg {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  color: var(--copyright-icon-bg-color);
+  font-size: 14rem;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+keep-mobile()
+}
+.post-copyright-info-container .copy-copyright-info {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.post-copyright-info-container .copy-copyright-info i {
+  color: var(--text-color-3);
+}
 html,
 body,
 div,
