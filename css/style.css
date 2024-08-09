@@ -5,7 +5,7 @@
   --neut-L30: rgba(255,255,255,0.3);
   --neut-L10: rgba(255,255,255,0.1);
   --banner-dim: rgba(0,0,0,0.2);
-  --primary-hue: 205;
+  --primary-hue: 150;
   --main-title: rgba(255,255,255,0.9);
   --btn-content: var(--neut-L75);
   --btn-content-hover: var(--btn-content);
@@ -76,40 +76,40 @@
 }
 @supports not (color: oklch(0 0 0)) {
   :root {
-    --primary: #00c6d8;
-    --nav-dropdown-bg: #0a191a;
-    --page-background: #060f10;
-    --card-background: #162426;
-    --btn-bg: #27494c;
-    --btn-hover: #355d61;
-    --btn-active: #3f6c71;
-    --card-btn-hover: #1b3235;
-    --card-btn-active: #234043;
-    --btn-text-hover: #0a191a;
-    --btn-text-active: #061213;
-    --timeline-dim-dot: #3f6c71;
-    --title-active: #00a3b2;
-    --tag-dot: #162426;
-    --highlight-selection: #234043;
-    --article-code-bg: #2c4e52;
-    --article-block: #0a191a;
-    --link-hover-bg: #00535c;
-    --link-active-bg: #00444c;
-    --blockquote-bg: #0a191a;
-    --blockquote-bar: #2c4e52;
-    --table-bg: #0f1d1f;
-    --table-row-deep: #0a191a;
-    --color-picker-range: #2c4e52;
-    --badge-bg: #2cc3d2;
-    --text-on-light: #162426;
-    --pagenav-curr-text: #162426;
-    --input-field: #0a191a;
-    --primary-btn-text: #162426;
-    --enter-btn-bg: #0a191a;
-    --enter-btn-hover: #1b3235;
-    --enter-btn-active: #234043;
-    --selection-bg: #00535c;
-    --code-block-selection-bg: #00535c;
+    --primary: #65c67d;
+    --nav-dropdown-bg: #101911;
+    --page-background: #090f0a;
+    --card-background: #1b241d;
+    --btn-bg: #334937;
+    --btn-hover: #435d48;
+    --btn-active: #4f6c54;
+    --card-btn-hover: #233226;
+    --card-btn-active: #2d4031;
+    --btn-text-hover: #101911;
+    --btn-text-active: #0a120b;
+    --timeline-dim-dot: #4f6c54;
+    --title-active: #53a367;
+    --tag-dot: #1b241d;
+    --highlight-selection: #2d4031;
+    --article-code-bg: #384e3c;
+    --article-block: #101911;
+    --link-hover-bg: #235430;
+    --link-active-bg: #1b4526;
+    --blockquote-bg: #101911;
+    --blockquote-bar: #384e3c;
+    --table-bg: #141d16;
+    --table-row-deep: #101911;
+    --color-picker-range: #384e3c;
+    --badge-bg: #73c385;
+    --text-on-light: #1b241d;
+    --pagenav-curr-text: #1b241d;
+    --input-field: #101911;
+    --primary-btn-text: #1b241d;
+    --enter-btn-bg: #101911;
+    --enter-btn-hover: #233226;
+    --enter-btn-active: #2d4031;
+    --selection-bg: #235430;
+    --code-block-selection-bg: #235430;
   }
 }
 :root[theme='light'] {
@@ -167,34 +167,34 @@
 }
 @supports not (color: oklch(0 0 0)) {
   :root[theme='light'] {
-    --primary: #00b6c7;
-    --page-background: #e7f1f2;
-    --nav-dropdown-bg: #f5f9fa;
-    --btn-bg: #dcf4f6;
-    --btn-content: #008390;
-    --btn-hover: #b8e8ee;
-    --btn-active: #8ddde7;
-    --btn-text-hover: #dcf4f6;
-    --btn-text-active: #f1fbfc;
-    --btn-text-content: #00b6c7;
-    --card-btn-hover: #f5f9fa;
-    --card-btn-active: #c8e4e7;
-    --title-active: #0093a2;
-    --link-hover-bg: #dcf4f6;
-    --link-active-bg: #b8e8ee;
-    --article-code-bg: #e0f3f5;
-    --blockquote-bg: #f5f9fa;
-    --blockquote-bar: #c0e6eb;
-    --table-bg: #f8fdfd;
-    --table-row-deep: #ecf8f9;
-    --badge-bg: #e0f3f5;
-    --text-on-light: #008390;
-    --color-picker-range: #e0f3f5;
-    --input-field: #f5f9fa;
-    --enter-btn-bg: #f5f9fa;
-    --enter-btn-hover: #e7f5f7;
-    --enter-btn-active: #c8e4e7;
-    --selection-bg: #b8e8ee;
+    --primary: #54b66e;
+    --page-background: #eaf0eb;
+    --nav-dropdown-bg: #f6f9f7;
+    --btn-bg: #e3f4e6;
+    --btn-content: #33854a;
+    --btn-hover: #c8e8cd;
+    --btn-active: #a9ddb2;
+    --btn-text-hover: #e3f4e6;
+    --btn-text-active: #f4faf5;
+    --btn-text-content: #54b66e;
+    --card-btn-hover: #f6f9f7;
+    --card-btn-active: #d1e4d4;
+    --title-active: #439458;
+    --link-hover-bg: #e3f4e6;
+    --link-active-bg: #c8e8cd;
+    --article-code-bg: #e6f3e8;
+    --blockquote-bg: #f6f9f7;
+    --blockquote-bar: #cce6d0;
+    --table-bg: #f9fdfa;
+    --table-row-deep: #f0f8f1;
+    --badge-bg: #e6f3e8;
+    --text-on-light: #33854a;
+    --color-picker-range: #e6f3e8;
+    --input-field: #f6f9f7;
+    --enter-btn-bg: #f6f9f7;
+    --enter-btn-hover: #ebf5ed;
+    --enter-btn-active: #d1e4d4;
+    --selection-bg: #c8e8cd;
   }
 }
 body {
