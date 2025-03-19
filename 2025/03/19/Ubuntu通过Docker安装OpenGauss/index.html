@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="light" showBanner="true" hasBanner="desktop" > 
+<html theme="light" showBanner="true" hasBanner="true" > 
 <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="/fontawesome/css/brands.css" rel="stylesheet">
 <link href="/fontawesome/css/solid.css" rel="stylesheet">
@@ -14,26 +14,33 @@
   
 
   
-  <title>作品展示 | Aurorallz&#39;s small island</title>
+  <title>Ubuntu通过Docker安装OpenGauss | Aurorallz&#39;s small island</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="一些还算ok作品，如果你也喜欢就好了！">
+  <meta name="description" content="本学期的数据库系统原理课程需要使用Docker配置OpenGauss，按照老师发布的Windows版教程实践下来发现了一些问题，于是便诞生了本文。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="作品展示">
-<meta property="og:url" content="https://aurora-n.github.io/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/index.html">
+<meta property="og:title" content="Ubuntu通过Docker安装OpenGauss">
+<meta property="og:url" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/index.html">
 <meta property="og:site_name" content="Aurorallz&#39;s small island">
-<meta property="og:description" content="一些还算ok作品，如果你也喜欢就好了！">
+<meta property="og:description" content="本学期的数据库系统原理课程需要使用Docker配置OpenGauss，按照老师发布的Windows版教程实践下来发现了一些问题，于是便诞生了本文。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://aurora-n.github.io/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/covers/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/9.webp">
-<meta property="article:published_time" content="2023-09-08T13:32:48.000Z">
-<meta property="article:modified_time" content="2023-09-18T13:31:53.352Z">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/1.png">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/2.png">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/3.png">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/4.png">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/5.png">
+<meta property="og:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/6.png">
+<meta property="article:published_time" content="2025-03-19T02:17:36.000Z">
+<meta property="article:modified_time" content="2025-03-19T04:31:57.127Z">
 <meta property="article:author" content="Aurorallz &#x2F; Aurora-N">
-<meta property="article:tag" content="摄影">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="OpenGauss">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://aurora-n.github.io/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/covers/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/9.webp">
+<meta name="twitter:image" content="https://aurora-n.github.io/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/1.png">
   
   
     <link rel="shortcut icon" href="/chika128.ico">
@@ -250,19 +257,9 @@
        
 
 
-<article id="post-作品展示" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-Ubuntu通过Docker安装OpenGauss" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
-<div class="article-gallery">
-  <div class="article-gallery-photos">
-    
-      <a class="article-gallery-img" rel="gallery_cm8ff8uj2000735hxhd1v2pg7">
-        <img src="/covers/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/9.webp" itemprop="image">
-      </a>
-    
-  </div>
-</div>
-
    
   <div class="article-inner">
     <div class="article-main">
@@ -273,7 +270,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        作品展示
+        Ubuntu通过Docker安装OpenGauss
       </h1>
     
   
@@ -281,18 +278,18 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-08T13:32:48.000Z" itemprop="datePublished">2023-09-08</time>
+  <time class="dt-published" datetime="2025-03-19T02:17:36.000Z" itemprop="datePublished">2025-03-19</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/">小作品</a>
+  <a class="meta-cate-link" href="/categories/%E5%BF%83%E5%BE%97%E4%B8%8E%E7%AC%94%E8%AE%B0/">心得与笔记</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            88 词 
+            1.2k 词 
           </div>
           <!-- busuanzi -->
           
@@ -303,28 +300,131 @@
           
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGauss/" rel="tag">OpenGauss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           
-          <p>一些还算ok作品，如果你也喜欢就好了！</p>
-<span id="more"></span>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/2.jpg" alt></p>
-<center>（2023年5月 摄于上海）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/7.webp" alt></p>
-<center>（2023年5月 摄于上海）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/3.jpg" alt></p>
-<center>（2023年7月 摄于阴山）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/4.jpg" alt></p>
-<center>（2023年7月 摄于南澳岛）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/8.webp" alt></p>
-<center>（2023年7月 摄于西安）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/11.webp" alt></p>
-<center>（2023年7月 摄于西安）</center>
-<p><img src="/2023/09/08/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/9.webp" alt></p>
-<center>（2023年7月 摄于壶口）</center>
+            <div class="toc-parent">
+  <div id="toc" class="toc-article">
+    <h2 class="toc-title">目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEDocker"><span class="toc-number">1.</span> <span class="toc-text">安装与配置Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90%E5%8A%A0%E9%80%9F"><span class="toc-number">1.1.</span> <span class="toc-text">配置镜像源加速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E7%BB%84%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">配置用户组（可选）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss"><span class="toc-number">2.</span> <span class="toc-text">通过Docker安装OpenGauss</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEOpenGauss%E5%AE%B9%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">配置OpenGauss容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7"><span class="toc-number">2.2.</span> <span class="toc-text">配置用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Navicat%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.3.</span> <span class="toc-text">通过Navicat连接数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7gaussdb%E8%BF%9B%E8%A1%8C%E8%BF%9E%E6%8E%A5%E7%9A%84%E7%8C%9C%E6%B5%8B"><span class="toc-number">3.</span> <span class="toc-text">无法通过测试用户gaussdb进行连接的猜测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+  </div>
+</div>
+          
+          <p>本学期的数据库系统原理课程需要使用Docker配置OpenGauss，按照老师发布的Windows版教程实践下来发现了一些问题，于是便诞生了本文。</p>
+<blockquote>
+<p><strong>运行环境</strong></p>
+<p>操作系统：Ubuntu 24.04.2 LTS<br>
+内核版本：Linux 6.11.0-19-generic<br>
+Shell：zsh 5.9<br>
+Docker版本：28.0.1 build 068a01e<br>
+Navicat版本：Navicat Premium 17.2.1</p>
+</blockquote>
+<h2 id="安装与配置Docker">安装与配置Docker</h2>
+<p>如果你已经安装Docker并且配置完毕，请跳过此段。Ubuntu用户可参考<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">这里</a>，使用apt存储库安装Docker。</p>
+<h3 id="配置镜像源加速">配置镜像源加速</h3>
+<p>不过在运行<code>hello-world</code>镜像来验证安装是否成功的时候，你大概率会看到这样的报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Unable to find image &#x27;hello-world:latest&#x27; locally</span><br><span class="line">docker: Error response from daemon: Get &quot;https://registry-1.docker.io/v2/&quot;: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br><span class="line"></span><br><span class="line">Run &#x27;docker run --help&#x27; for more information</span><br></pre></td></tr></table></figure>
+<p>这是因为国内从DockerHub拉取镜像较为困难，我们需要配置国内可用的镜像源：</p>
+<ol>
+<li>
+<p>编辑Docker配置文件<code>/etc/docker/daemon.json</code></p>
+<p>如果本地没有配置文件，可按照下面的方法进行创建：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://docker.mirrors.ustc.edu.cn&quot;,</span><br><span class="line">    &quot;http://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://docker.1ms.run&quot;,</span><br><span class="line">    &quot;https://docker.xuanyuan.me&quot;,</span><br><span class="line">    &quot;https://docker.1panel.live&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重新加载并重启Docker服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>再次拉取 <code>Hello-world</code>镜像，可以成功安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull hello-world</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>若使用Docker Desktop，可参照<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Flat-White/p/17107494.html">此教程</a>配置镜像源。</p>
+<h3 id="配置用户组（可选）">配置用户组（可选）</h3>
+<p>我们发现，每次执行<code>docker</code>命令都需要加上<code>sudo</code>，有些繁琐。我们可以将用户添加到Docker用户组，我们就无需<code>sudo</code>即可执行<code>docker</code>命令：</p>
+<ol>
+<li>
+<p>在系统中创建<code>docker</code>用户组：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>将用户添加到<code>docker</code>用户组：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>更新用户组：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newgrp docker</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>查看是否添加成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups</span><br></pre></td></tr></table></figure>
+<p>出现<code>docker</code>即表明添加成功：</p>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/1.png" alt="添加成功"></p>
+</li>
+</ol>
+<h2 id="通过Docker安装OpenGauss">通过Docker安装OpenGauss</h2>
+<h3 id="配置OpenGauss容器">配置OpenGauss容器</h3>
+<ol>
+<li>
+<p>拉取OpenGauss镜像：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull enmotech/opengauss:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>创建OpenGauss容器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name opengauss --privileged=true -d -e GS_PASSWORD=opengaussDB@1234 -v /home/&#123;username&#125;/db/opengaussdata:/var/lib/opengauss -p 15432:5432 enmotech/opengauss:latest</span><br></pre></td></tr></table></figure>
+<p><code>GS_PASSWORD</code>参数设置了OpenGauss数据库超级用户<code>omm</code>以及测试用户<code>gaussdb</code>的密码。密码有复杂度要求，<strong>长度密码要求8个字符及以上，必须同时包含英文字母大小写、数字、以及特殊符号</strong>。<code>opengaussDB@1234</code>为我自己设置的密码，你可以根据规则自行修改；</p>
+<p><code>-v /home/user/db/opengaussdata:/var/lib/opengauss</code>表示将容器内的<code>/var/lib/opengauss</code>路径映射到本机的<code>/home/&#123;username&#125;/db/opengaussdata</code>路径上，可以自行设置对应路径；</p>
+<p><code>-p 15432:5432</code>表示将容器内的<code>5432</code>端口映射到<code>15432</code>端口，供本机使用。</p>
+<p>配置完成后，容器会自动运行</p>
+</li>
+<li>
+<p>启动容器</p>
+<p>查看容器是否正常运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<p>出现下图表示容器已经正常运行</p>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/2.png" alt="容器已经正常运行"></p>
+<p>若找不到容器，可以执行下面的命令重启容器，<code>&#123;xxx&#125;</code>表示容器ID的前三位，如上图的容器ID前三位为<code>214</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart &#123;xxx&#125;</span><br></pre></td></tr></table></figure>
+<p>如果忘记容器ID，可以通过下面的命令列出所有的容器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="配置用户">配置用户</h3>
+<p>在我的实践过程中，本地无法通过测试用户<code>gaussdb</code>和刚才配置的密码进行连接数据库，提示密码与用户名无效：</p>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/3.png" alt="Navicat连接数据库失败"></p>
+<p>我们需要进入容器中自行配置用户</p>
+<ol>
+<li>
+<p>执行下面命令进入容器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it opengauss bash</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>进入容器中的omm超级用户，通过<code>gsql</code>访问数据库，<code>5432</code>为容器内部端口。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - omm</span><br><span class="line">gsql -d postgres -p5432</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>创建用户，下面的用户名和密码可自行修改：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> aurorallz PASSWORD <span class="string">&#x27;Llz@114514&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>因为我已经创建过一次，此处提示用户已存在。</p>
+</li>
+</ol>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/4.png" alt="Terminal示例"></p>
+<h3 id="通过Navicat连接数据库">通过Navicat连接数据库</h3>
+<p>启动Navicat，连接名称自取，端口为先前设置的<code>15432</code>，用户名和密码即为我们上一节中在容器内设置的。连接成功！</p>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/5.png" alt="成功链接Nvaicat数据库"></p>
+<h2 id="无法通过测试用户gaussdb进行连接的猜测">无法通过测试用户gaussdb进行连接的猜测</h2>
+<p><a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/324074">这篇文章</a>中提到，测试用户<code>gaussdb</code>是在<a target="_blank" rel="noopener" href="https://github.com/enmotech/enmotech-docker-opengauss/blob/master/1.0.1/entrypoint.sh"><code>entrypoint.sh</code></a>中自定义创建的用户，猜测是<code>entrypoint.sh</code>脚本未能正常执行，导致测试用户<code>gaussdb</code>未能正确建立，因此无法通过测试用户<code>gaussdb</code>进行连接。如果你对此有想法，欢迎到评论区讨论～</p>
+<p><img src="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/6.png" alt="Navicat中数据库内容显示"></p>
+<h2 id="参考资料">参考资料</h2>
+<p><a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/324074">在Docker中快速体验openGauss数据库——小麦苗DB宝</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.tiancy.cn/2024/03/05/opengauss-docker-build/">Unbuntu22.04 使用 Docker 安装 OpenGauss——Tiancy</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/1045677588614217733">通过Docker安装openGauss（Windows篇）——Sinkhorn</a></p>
+<p><a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/docker-permission-denied">How to Fix Docker Permission Denied?——Marko Aleksic</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013172930/article/details/146019109">【Docker】设置镜像加速器：修改/etc/docker/daemon.json——彬彬侠</a></p>
 
         
 
@@ -341,27 +441,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"
-      title="Hexo及Vivia主题使用笔记"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        Hexo及Vivia主题使用笔记
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/08/28/%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/"
-      title="梦开始的地方"
+      href="/2023/09/22/%E8%AE%B0sudo-apt-get-update%E6%8A%A5%E9%94%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"
+      title="记apt-get update报错的解决方法"
      >
 
     <p class="title-text">
       
-        梦开始的地方
+        记apt-get update报错的解决方法
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
