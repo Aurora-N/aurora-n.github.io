@@ -218,6 +218,32 @@ body:after {
 #toc .toc-child {
   padding-left: 1.5em;
 }
+.widget-body.toc-content {
+  padding: 10px 0;
+}
+.widget-body.toc-content .toc {
+  list-style: none;
+  padding-left: 0;
+}
+.widget-body.toc-content .toc ul {
+  list-style: none;
+  padding-left: 15px;
+}
+.widget-body.toc-content .toc li {
+  margin-bottom: 5px;
+}
+.widget-body.toc-content .toc a {
+  text-decoration: none;
+  color: var(--text-p);
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.widget-body.toc-content .toc a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
 html,
 body,
 div,
