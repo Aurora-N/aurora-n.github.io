@@ -473,6 +473,7 @@ body {
 navbar,
 .article-inner,
 #article-nav .article-nav-btn,
+.license-box,
 .comment-card,
 .wl-comment-card,
 #page-nav #num-bar,
@@ -1743,6 +1744,161 @@ a.article-title:active {
   object-fit: cover;
   margin: 0 auto;
   max-height: 40vh;
+}
+@media screen and (max-width: 767px) {
+  .license-box {
+    margin: 16px 28px;
+  }
+}
+.license-content {
+  padding: 20px;
+  background: var(--card-background);
+  border-radius: 16px;
+  border: 1px solid var(--neut-L10);
+  -webkit-transition: background 0.15s ease-out, border-color 0.15s ease-out;
+  -moz-transition: background 0.15s ease-out, border-color 0.15s ease-out;
+  -ms-transition: background 0.15s ease-out, border-color 0.15s ease-out;
+  transition: background 0.15s ease-out, border-color 0.15s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+.license-content:hover .license-icon {
+  opacity: 0.15;
+}
+@media screen and (max-width: 767px) {
+  .license-content:hover .license-icon {
+    opacity: 0.12;
+  }
+}
+.license-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--neut-L10);
+  padding-bottom: 12px;
+}
+.license-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.license-title a {
+  color: var(--link);
+  text-decoration: none;
+}
+.license-title a:hover {
+  color: var(--title-hover);
+  text-decoration: underline;
+}
+.license-info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .license-info {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+.license-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 4px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .license-item {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+.license-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--article-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.license-value {
+  font-size: 14px;
+  color: var(--article-text);
+}
+.license-value a {
+  color: var(--link);
+  text-decoration: none;
+}
+.license-value a:hover {
+  color: var(--title-hover);
+  text-decoration: underline;
+}
+.license-value time {
+  color: var(--article-text);
+}
+.license-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.08;
+  -webkit-transition: opacity 0.15s ease-out;
+  -moz-transition: opacity 0.15s ease-out;
+  -ms-transition: opacity 0.15s ease-out;
+  transition: opacity 0.15s ease-out;
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  .license-icon {
+    right: 15px;
+    opacity: 0.05;
+  }
+}
+.license-icon i {
+  font-size: 80px;
+  color: var(--article-meta);
+  -webkit-transition: color 0.15s ease-out;
+  -moz-transition: color 0.15s ease-out;
+  -ms-transition: color 0.15s ease-out;
+  transition: color 0.15s ease-out;
+}
+@media screen and (max-width: 767px) {
+  .license-icon i {
+    font-size: 60px;
+  }
 }
 .comment-card {
   padding: 32px 40px 0 40px;
