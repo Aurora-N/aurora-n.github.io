@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="正则表达式-&gt;DFA分析题（1题，15分）  要求：会写正则表达式、画NFA、画DFA 熟悉实验二的流程：词法分析程序getToken()、正则表达式转NFA、NFA转DFA、DFA最小化、DFA生成词法分析程序  简单一点的：手工方法画图 难的会写代码，以及各个流程的具体代码（需要明确具体的各个流程之间的转换代码）：  定义数据结构  getToken解析源代码  高级正则转基本正则：如a">
+  <meta name="description" content="正则表达式-&gt;DFA分析题复习笔记。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理期末复习笔记-正则表达式-&gt;DFA分析题">
 <meta property="og:url" content="https://aurora-n.github.io/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="Aurorallz&#39;s small island">
-<meta property="og:description" content="正则表达式-&gt;DFA分析题（1题，15分）  要求：会写正则表达式、画NFA、画DFA 熟悉实验二的流程：词法分析程序getToken()、正则表达式转NFA、NFA转DFA、DFA最小化、DFA生成词法分析程序  简单一点的：手工方法画图 难的会写代码，以及各个流程的具体代码（需要明确具体的各个流程之间的转换代码）：  定义数据结构  getToken解析源代码  高级正则转基本正则：如a">
+<meta property="og:description" content="正则表达式-&gt;DFA分析题复习笔记。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://aurora-n.github.io/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628171314699.png">
 <meta property="og:image" content="https://aurora-n.github.io/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628172949919.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://aurora-n.github.io/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194253250.png">
 <meta property="og:image" content="https://aurora-n.github.io/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628200951413.png">
 <meta property="article:published_time" content="2025-06-15T02:10:16.000Z">
-<meta property="article:modified_time" content="2025-07-25T04:36:35.016Z">
+<meta property="article:modified_time" content="2025-07-25T04:59:59.175Z">
 <meta property="article:author" content="Aurorallz &#x2F; Aurora-N">
 <meta property="article:tag" content="编译原理">
 <meta name="twitter:card" content="summary">
@@ -156,9 +156,11 @@
     <div class="widget-wrap">
       <div class="widget">
         <h3 class="widget-title">目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-gt-DFA%E5%88%86%E6%9E%90%E9%A2%98%EF%BC%881%E9%A2%98%EF%BC%8C15%E5%88%86%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">正则表达式-&gt;DFA分析题（1题，15分）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NFA%E8%BD%ACDFA"><span class="toc-number">1.1.</span> <span class="toc-text">NFA转DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFA%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">DFA最小化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96DFA%E8%BD%AC%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">最小化DFA转词法分析程序</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NFA%E8%BD%ACDFA"><span class="toc-number">1.</span> <span class="toc-text">NFA转DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFA%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">DFA最小化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96DFA%E8%BD%AC%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">最小化DFA转词法分析程序</span></a></li></ol>
       </div>
     </div>
+  
+
   
 
   
@@ -175,7 +177,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E5%BF%83%E5%BE%97%E4%B8%8E%E7%AC%94%E8%AE%B0/">
                 心得与笔记
-                <div class="category-count">3</div>
+                <div class="category-count">4</div>
             </a>
         
             <a class="category-link" href="/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/">
@@ -224,6 +226,11 @@
           <div class="archive-count">1 </div>
         </a>
       
+        <a class="archive-link" href="/archives/2025/05 ">
+          五月 2025 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2025/03 ">
           三月 2025 
           <div class="archive-count">1 </div>
@@ -256,6 +263,12 @@
             </div>
           </a>
         
+          <a class="recent-link" href="/2025/05/18/hexo%E5%8D%9A%E5%AE%A2%E5%AE%8C%E5%96%84/" title="Hexo博客完善-实现目录和访问次数" >
+            <div class="recent-link-text">
+              Hexo博客完善-实现目录和访问次数
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/" title="Ubuntu通过Docker安装OpenGauss" >
             <div class="recent-link-text">
               Ubuntu通过Docker安装OpenGauss
@@ -271,12 +284,6 @@
           <a class="recent-link" href="/2023/09/18/%E8%BD%AC%E4%B8%93%E4%B8%9A%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/" title="华师转专业心得" >
             <div class="recent-link-text">
               华师转专业心得
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/16/Hexo%E5%8F%8AVivia%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" title="Hexo及Vivia主题使用笔记" >
-            <div class="recent-link-text">
-              Hexo及Vivia主题使用笔记
             </div>
           </a>
         
@@ -324,7 +331,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.3k 词 
+            3.1k 词 
           </div>
           <!-- busuanzi-counter -->
           
@@ -345,11 +352,11 @@
             <div class="toc-parent">
   <div id="toc" class="toc-article">
     <h2 class="toc-title">目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-gt-DFA%E5%88%86%E6%9E%90%E9%A2%98%EF%BC%881%E9%A2%98%EF%BC%8C15%E5%88%86%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">正则表达式-&gt;DFA分析题（1题，15分）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NFA%E8%BD%ACDFA"><span class="toc-number">1.1.</span> <span class="toc-text">NFA转DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFA%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">DFA最小化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96DFA%E8%BD%AC%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text">最小化DFA转词法分析程序</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NFA%E8%BD%ACDFA"><span class="toc-number">1.</span> <span class="toc-text">NFA转DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFA%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">DFA最小化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96DFA%E8%BD%AC%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">最小化DFA转词法分析程序</span></a></li></ol>
   </div>
 </div>
           
-          <h1 id="正则表达式-gt-DFA分析题（1题，15分）"><a href="#正则表达式-gt-DFA分析题（1题，15分）" class="headerlink" title="正则表达式-&gt;DFA分析题（1题，15分）"></a>正则表达式-&gt;DFA分析题（1题，15分）</h1><hr>
+          <hr>
 <blockquote>
 <p>要求：会写正则表达式、画NFA、画DFA</p>
 <p>熟悉实验二的流程：词法分析程序<code>getToken()</code>、正则表达式转NFA、NFA转DFA、DFA最小化、DFA生成词法分析程序</p>
@@ -357,85 +364,225 @@
 <p>简单一点的：手工方法画图</p>
 <p>难的会写代码，以及各个流程的具体代码（需要明确具体的各个流程之间的转换代码）：</p>
 <ul>
-<li><p>定义数据结构</p>
+<li>
+<p>定义数据结构</p>
 </li>
-<li><p>getToken解析源代码</p>
+<li>
+<p>getToken解析源代码</p>
 </li>
-<li><p>高级正则转基本正则：如<code>a+</code>-&gt;<code>aa*</code>、<code>a?</code>-&gt;<code>(a|#)</code></p>
+<li>
+<p>高级正则转基本正则：如<code>a+</code>-&gt;<code>aa*</code>、<code>a?</code>-&gt;<code>(a|#)</code></p>
 </li>
-<li><p>再对基本正则转NFA</p>
+<li>
+<p>再对基本正则转NFA</p>
 </li>
-<li><p>NFA转DFA</p>
+<li>
+<p>NFA转DFA</p>
 </li>
-<li><p>DFA最小化</p>
+<li>
+<p>DFA最小化</p>
 </li>
-<li><p>根据最小化DFA写出词法分析代码</p>
+<li>
+<p>根据最小化DFA写出词法分析代码</p>
 </li>
 </ul>
-<h2 id="NFA转DFA"><a href="#NFA转DFA" class="headerlink" title="NFA转DFA"></a>NFA转DFA</h2><ol>
-<li><p><strong>求Epsilon闭包</strong>：求A状态的Epsilon，就是求从A出发，可以通过Epsilon转换到达的所有状态</p>
-</li>
-<li><p><strong>消除多重转换</strong>：子集构造法</p>
-</li>
-<li><p>例子</p>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628171314699.png" alt="image-20250628171314699"> </p>
-</li>
-</ol>
-<ul>
-<li><p>先求始态1的Epsilon闭包：<code>&#123;1&#125;</code>（1没有到其他状态的epsilon转移）</p>
-</li>
-<li><p>然后看图，发现除了epsilon转移，还有<code>letter</code>与<code>digit</code>转移，画出表格框架：</p>
-<p>| 状态集合 | letter | digit |<br>| :———: | :——: | :—-: |<br>|   {1}    |        |       |</p>
-</li>
-<li><p>接下来，进行子集构造：分别寻找<code>&#123;1&#125;</code>通过<code>letter</code>与<code>digit</code>转移可以到达的状态集合（包括借助epsilon转移可以到达的状态，在一轮寻找中，<code>letter</code>与<code>digit</code>只能借助一次）：</p>
+<h2 id="NFA转DFA">NFA转DFA</h2>
 <ol>
-<li><p>寻找通过<code>letter</code>转移可以到达的状态集合：<code>&#123;2, 3, 4, 5, 7, 10&#125;</code> （为什么没有6？因为只能借助一次<code>letter</code>），然后将找到的状态集合填表</p>
-<p>|      状态集合       |       letter        | digit |<br>| :————————-: | :————————-: | :—-: |<br>|         {1}         | {2, 3, 4, 5, 7, 10} |       |<br>| {2, 3, 4, 5, 7, 10} |                     |       |</p>
+<li>
+<p><strong>求Epsilon闭包</strong>：求A状态的Epsilon，就是求从A出发，可以通过Epsilon转换到达的所有状态</p>
 </li>
-<li><p>寻找通过<code>digit</code>转移可以到达的状态：无，不填</p>
+<li>
+<p><strong>消除多重转换</strong>：子集构造法</p>
+</li>
+<li>
+<p>例子</p>
+</li>
+</ol>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628171314699.png" alt="image-20250628171314699"></p>
+<ul>
+<li>
+<p>先求始态1的Epsilon闭包：<code>&#123;1&#125;</code>（1没有到其他状态的epsilon转移）</p>
+</li>
+<li>
+<p>然后看图，发现除了epsilon转移，还有<code>letter</code>与<code>digit</code>转移，画出表格框架：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态集合</th>
+<th style="text-align:center">letter</th>
+<th style="text-align:center">digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{1}</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>接下来，进行子集构造：分别寻找<code>&#123;1&#125;</code>通过<code>letter</code>与<code>digit</code>转移可以到达的状态集合（包括借助epsilon转移可以到达的状态，在一轮寻找中，<code>letter</code>与<code>digit</code>只能借助一次）：</p>
+<ol>
+<li>
+<p>寻找通过<code>letter</code>转移可以到达的状态集合：<code>&#123;2, 3, 4, 5, 7, 10&#125;</code> （为什么没有6？因为只能借助一次<code>letter</code>），然后将找到的状态集合填表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态集合</th>
+<th style="text-align:center">letter</th>
+<th style="text-align:center">digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{1}</td>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>寻找通过<code>digit</code>转移可以到达的状态：无，不填</p>
 </li>
 </ol>
 </li>
-<li><p>我们接着对新状态集合<code>&#123;2, 3, 4, 5, 7, 10&#125;</code>进行相似的搜寻，分别找到通过<code>letter</code>转移可以到达的状态集合<code>&#123;6, 9, 10, 4, 5, 7&#125;</code>，以及通过<code>digit</code>转移可以到达的状态集合<code>&#123;8, 9, 10, 4, 5, 7&#125;</code>，之后更新表格</p>
-<p>|      状态集合       |       letter        |        digit        |<br>| :————————-: | :————————-: | :————————-: |<br>|         {1}         | {2, 3, 4, 5, 7, 10} |                     |<br>| {2, 3, 4, 5, 7, 10} | {6, 9, 10, 4, 5, 7} | {8, 9, 10, 4, 5, 7} |<br>| {6, 9, 10, 4, 5, 7} |                     |                     |</p>
+<li>
+<p>我们接着对新状态集合<code>&#123;2, 3, 4, 5, 7, 10&#125;</code>进行相似的搜寻，分别找到通过<code>letter</code>转移可以到达的状态集合<code>&#123;6, 9, 10, 4, 5, 7&#125;</code>，以及通过<code>digit</code>转移可以到达的状态集合<code>&#123;8, 9, 10, 4, 5, 7&#125;</code>，之后更新表格</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态集合</th>
+<th style="text-align:center">letter</th>
+<th style="text-align:center">digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{1}</td>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{8, 9, 10, 4, 5, 7}</td>
+</tr>
+<tr>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>接下来再对<code>&#123;6, 9, 10, 4, 5, 7&#125;</code>与<code>&#123;8, 9, 10, 4, 5, 7&#125;</code>分别求解，得出结果并更新表格……一直求解，直到不再产生新的状态或转移。最终表格如下：</p>
-<p>|    状态集合\符号    |       letter        |        digit        |<br>| :————————-: | :————————-: | :————————-: |<br>|         {1}         | {2, 3, 4, 5, 7, 10} |                     |<br>| {2, 3, 4, 5, 7, 10} | {6, 9, 10, 4, 5, 7} | {8, 9, 10, 4, 5, 7} |<br>| {6, 9, 10, 4, 5, 7} | {6, 9, 10, 4, 5, 7} | {8, 9, 10, 4, 5, 7} |<br>| {8, 9, 10, 4, 5, 7} | {6, 9, 10, 4, 5, 7} | {8, 9, 10, 4, 5, 7} |</p>
+<li>
+<p>接下来再对<code>&#123;6, 9, 10, 4, 5, 7&#125;</code>与<code>&#123;8, 9, 10, 4, 5, 7&#125;</code>分别求解，得出结果并更新表格……一直求解，直到不再产生新的状态或转移。最终表格如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态集合\符号</th>
+<th style="text-align:center">letter</th>
+<th style="text-align:center">digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">{1}</td>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">{2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{8, 9, 10, 4, 5, 7}</td>
+</tr>
+<tr>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{8, 9, 10, 4, 5, 7}</td>
+</tr>
+<tr>
+<td style="text-align:center">{8, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">{8, 9, 10, 4, 5, 7}</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>完成后，即可根据表格画出DFA图（记得给NFA接受状态<code>10</code>所在的的状态集合画上双圈，表示DFA的接受状态）：</p>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628172949919.png" alt="image-20250628172949919"> </p>
+<li>
+<p>完成后，即可根据表格画出DFA图（记得给NFA接受状态<code>10</code>所在的的状态集合画上双圈，表示DFA的接受状态）：</p>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628172949919.png" alt="image-20250628172949919"></p>
 </li>
 </ul>
-<h2 id="DFA最小化"><a href="#DFA最小化" class="headerlink" title="DFA最小化"></a>DFA最小化</h2><ol>
+<h2 id="DFA最小化">DFA最小化</h2>
+<ol>
 <li>将原始DFA分为<strong>接受状态集合</strong><code>S1</code>与<strong>非接受状态集合</strong><code>S2</code>两个集合</li>
 <li>对<code>S1</code>与<code>S2</code>里面每个状态，分别判断它们通过所有的符号转移后，得到的状态集合是否一致？如果一致，说明它们同属一个集合（可以最小化为一个状态）；如果不一致，则划分出去成为新的集合</li>
-<li><p>例子1：</p>
+<li>例子1：</li>
+</ol>
 <p>对上面的DFA，令</p>
 <p><code>A = &#123;1&#125;</code>，<code>B = &#123;2, 3, 4, 5, 7, 10&#125;</code>，<code>C = &#123;6, 9, 10, 4, 5, 7&#125;</code>，<code>D = &#123;8, 9, 10, 4, 5, 7&#125;</code>;</p>
-<p>|      状态集合\符号      |         letter          |          digit          |<br>| :——————————-: | :——————————-: | :——————————-: |<br>|         A = {1}         | B = {2, 3, 4, 5, 7, 10} |                         |<br>| B ={2, 3, 4, 5, 7, 10}  | C = {6, 9, 10, 4, 5, 7} | D = {8, 9, 10, 4, 5, 7} |<br>| C = {6, 9, 10, 4, 5, 7} | C = {6, 9, 10, 4, 5, 7} | D = {8, 9, 10, 4, 5, 7} |<br>| D = {8, 9, 10, 4, 5, 7} | C = {6, 9, 10, 4, 5, 7} | D = {8, 9, 10, 4, 5, 7} |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态集合\符号</th>
+<th style="text-align:center">letter</th>
+<th style="text-align:center">digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A = {1}</td>
+<td style="text-align:center">B = {2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">B ={2, 3, 4, 5, 7, 10}</td>
+<td style="text-align:center">C = {6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">D = {8, 9, 10, 4, 5, 7}</td>
+</tr>
+<tr>
+<td style="text-align:center">C = {6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">C = {6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">D = {8, 9, 10, 4, 5, 7}</td>
+</tr>
+<tr>
+<td style="text-align:center">D = {8, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">C = {6, 9, 10, 4, 5, 7}</td>
+<td style="text-align:center">D = {8, 9, 10, 4, 5, 7}</td>
+</tr>
+</tbody>
+</table>
 <p>现在根据<strong>是否为接受状态</strong>来划分出两个集合：<code>S1 = &#123;A&#125;</code>、<code>S2 = &#123;B, C, D&#125;</code>;</p>
 <p>我们观察上面的表格，发现对于<code>S1</code>内部的状态<code>A</code>，通过<code>letter</code>转移到<code>S2</code>的<code>B</code>；而对于<code>S2</code>内部的三个状态，它们都是通过<code>letter</code>转移到<code>S2</code>的<code>C</code>和通过<code>digit</code>转移到<code>S2</code>的<code>D</code>，说明它们三个确实属于<code>S2</code>集合，<code>S2</code>集合无需再进一步划分，可以融合为一个状态。</p>
 <p>最终，我们根据<code>S1</code>与<code>S2</code>得到最小化DFA：</p>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194253250.png" alt="image-20250628194253250"> </p>
-</li>
-<li><p>例子2：</p>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194353377.png" alt="image-20250628194353377"> </p>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194253250.png" alt="image-20250628194253250"></p>
+<ol start="4">
+<li>例子2：</li>
+</ol>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194353377.png" alt="image-20250628194353377"></p>
 <p>来看这个DFA，它们都是接受状态，因此我们先划分一个集合<code>S1 = &#123;1, 2, 3&#125;</code></p>
 <p>然后依次看里面的三个状态：</p>
-</li>
-</ol>
 <ul>
 <li>状态<code>1</code>可以通过<code>a</code>到达状态<code>2</code>、通过<code>b</code>到达状态<code>3</code></li>
 <li>状态<code>2</code>可以通过<code>b</code>到达状态<code>3</code></li>
-<li><p>状态<code>3</code>也可以通过<code>b</code>到达状态<code>3</code></p>
+<li>状态<code>3</code>也可以通过<code>b</code>到达状态<code>3</code></li>
+</ul>
 <p>我们发现，状态<code>1</code>和状态<code>2</code>、状态<code>3</code>不一样，因此<code>S1</code>分裂为<code>&#123;1&#125;</code>与<code>&#123;2, 3&#125;</code>两个集合</p>
 <p>最终得到最小化DFA：</p>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194907816.png" alt="image-20250628194907816"> </p>
-</li>
-</ul>
-<h2 id="最小化DFA转词法分析程序"><a href="#最小化DFA转词法分析程序" class="headerlink" title="最小化DFA转词法分析程序"></a>最小化DFA转词法分析程序</h2><p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194253250.png" alt="image-20250628194253250"> </p>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194907816.png" alt="image-20250628194907816"></p>
+<h2 id="最小化DFA转词法分析程序">最小化DFA转词法分析程序</h2>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628194253250.png" alt="image-20250628194253250"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> state = <span class="number">1</span>;</span><br><span class="line"><span class="type">char</span> ch = <span class="built_in">nextChar</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isLetter</span>(ch)) &#123;</span><br><span class="line">            ch = <span class="built_in">nextChar</span>(); <span class="comment">// 接收下一字符</span></span><br><span class="line">            state = <span class="number">2</span>; <span class="comment">// 进入下一状态</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">error</span>();   <span class="comment">// 出错</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    	<span class="keyword">if</span> (<span class="built_in">isLetter</span>(ch) || <span class="built_in">isDigit</span>(ch)) &#123;</span><br><span class="line">            ch = <span class="built_in">nextChar</span>(); <span class="comment">// 接收下一字符</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">accept</span>();  <span class="comment">// 接受状态</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">error</span>();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628200951413.png" alt="image-20250628200951413"> </p>
+<p><img src="/2025/06/15/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-DFA%E7%9B%B8%E5%85%B3/image-20250628200951413.png" alt="image-20250628200951413"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> state = <span class="number">1</span>;</span><br><span class="line"><span class="type">char</span> ch;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">                ch = <span class="built_in">nextChar</span>();</span><br><span class="line">                state = <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">error</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">                ch = <span class="built_in">nextChar</span>();</span><br><span class="line">                state = <span class="number">3</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">error</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">                ch = <span class="built_in">nextChar</span>();</span><br><span class="line">                state = <span class="number">4</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; <span class="comment">// other</span></span><br><span class="line">                ch = <span class="built_in">nextChar</span>(); <span class="comment">// 接收其他字符，停留在状态3</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">                ch = <span class="built_in">nextChar</span>();</span><br><span class="line">                state = <span class="number">5</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">                ch = <span class="built_in">nextChar</span>(); <span class="comment">// 接收*，停留在状态4</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; <span class="comment">// other</span></span><br><span class="line">                ch = <span class="built_in">nextChar</span>();</span><br><span class="line">                state = <span class="number">3</span>; <span class="comment">// 接收其他字符，回到状态3</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">            <span class="built_in">accept</span>(); <span class="comment">// 结束</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">error</span>();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
@@ -509,13 +656,13 @@
   </a>
   <a class="article-nav-btn right "
     
-      href="/2025/03/19/Ubuntu%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85OpenGauss/"
-      title="Ubuntu通过Docker安装OpenGauss"
+      href="/2025/05/18/hexo%E5%8D%9A%E5%AE%A2%E5%AE%8C%E5%96%84/"
+      title="Hexo博客完善-实现目录和访问次数"
      >
 
     <p class="title-text">
       
-        Ubuntu通过Docker安装OpenGauss
+        Hexo博客完善-实现目录和访问次数
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
