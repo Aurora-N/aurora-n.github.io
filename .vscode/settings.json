@@ -18,5 +18,12 @@
     "quickfix.biome": "always",
     "source.organizeImports.biome": "always"
   },
-  "frontMatter.dashboard.openOnStart": false
+  "frontMatter.dashboard.openOnStart": false,
+  "chat.tools.terminal.autoApprove": {
+    "^C": true,
+    "/^node -e '\nconst fs = require\\(\"fs\"\\);\nconst path = require\\(\"path\"\\);\nconst dir = \"src/i18n/languages\";\nconst files = fs\\.readdirSync\\(dir\\)\\.filter\\(f => f\\.endsWith\\(\"\\.ts\"\\)\\);\n\nconst translations = \\{\n    \"zh_CN\\.ts\": \"项目\",\n    \"zh_TW\\.ts\": \"專案\",\n    \"ja\\.ts\": \"プロジェクト\",\n    \"es\\.ts\": \"Proyectos\"\n\\};\n\nfor \\(const file of files\\) \\{\n    const p = path\\.join\\(dir, file\\);\n    let content = fs\\.readFileSync\\(p, \"utf-8\"\\);\n    \n    // Check if it already has Key\\.projects\n    if \\(content\\.includes\\(\"\\[Key\\.projects\\]\"\\)\\) continue;\n    \n    const trans = translations\\[file\\] \\|\\| \"Projects\";\n    \n    // Replace right after Key\\.archive\n    content = content\\.replace\\(/\\(\\\\\\[Key\\\\\\.archive\\\\\\]:\\.\\*,\\)/, `\\$1\\\\n\\\\t\\[Key\\.projects\\]: \"\\$\\{trans\\}\",`\\);\n    \n    fs\\.writeFileSync\\(p, content\\);\n\\}\nconsole\\.log\\(\"Languages updated\\.\"\\);\n'$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
 }
