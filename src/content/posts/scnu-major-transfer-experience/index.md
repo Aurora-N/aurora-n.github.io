@@ -176,7 +176,7 @@ tags: ["转专业", "SCNU"]
 
 T1. 输入分数，（输入-1退出），统计考试人数、平均分、最高分、最低分。（40分）
 
-```C
+```c
 #include<stdio.h>
 
 double aver(double mark[], int num);
@@ -234,7 +234,7 @@ T2. 定义一个函数``func()``。输入一个数字,判断数组内有没有�
 
 代码片段如下，正式考核需补全主函数部分：
 
-```C
+```c
 void func(int a[], int length, int n) {
     int count = 0;
     int firstIndex = -1;
@@ -261,7 +261,7 @@ T3. 考察排序算法。任给一个数组，从小到大排序后输出结果�
 
 代码片段如下，正式考核需补全主函数部分：
 
-```C
+```c
 void selectionSort(int a[],int length) {
     int temp = 0;
     for (int i = 0; i < length - 1; i++) {

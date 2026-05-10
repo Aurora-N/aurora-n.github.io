@@ -37,8 +37,8 @@ export const siteConfig: SiteConfig = {
 		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		// }
 		{
-			src: "favicon/chika128.ico", // Path of the favicon, relative to the /public directory
-		}
+			src: "/favicon/chika128.ico", // Path of the favicon, relative to the /public directory
+		},
 	],
 };
 
@@ -48,11 +48,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		LinkPreset.Projects,
-		{
-			name: "GitHub",
-			url: "https://github.com/Aurora-N", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
+		// {
+		// 	name: "GitHub",
+		// 	url: "https://github.com/Aurora-N", // Internal links should not include the base path, as it is automatically added
+		// 	external: true, // Show an external link icon and will open in a new tab
+		// },
 	],
 };
 
@@ -77,7 +77,7 @@ export const profileConfig: ProfileConfig = {
 			name: "E-mail",
 			icon: "fa6-solid:at",
 			url: "mailto:Aurorallz@163.com",
-		}
+		},
 	],
 };
 

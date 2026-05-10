@@ -170,7 +170,7 @@ Run 'docker run --help' for more information
 
 3. 创建用户，下面的用户名和密码可自行修改：
 
-   ```SQL
+   ```sql
    CREATE USER aurorallz PASSWORD 'Llz@114514';
    ```
 
